@@ -58,9 +58,8 @@ pip install onnxruntime_openvino-1.9.0-cp37-cp37m-linux_x86_64.whl
 # or conver your own model with 
 python tools/onnx_search.py
 python tools/onnx_template.py
-
-python tools/test.py siamtpn_onnx SiamTPN --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
 ```
+
 CPU onxx
 ```
 python tools/test.py siamtpn_onnx SiamTPN --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
