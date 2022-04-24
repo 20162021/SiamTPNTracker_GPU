@@ -34,14 +34,14 @@ change the path in `lib/test/evaluation/local.py ` to your data location
 ```
 # Download the pretrain model and put it under ./results/checkpoints/train/SiamTPN/ folder
 
-python tools/test.py siamtpn shufflenet_l345_192 --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
+python tools/test.py siamtpn SiamTPN --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
 ```
 
 ### running on cpu/gpu (Nvidia CUDA) with onnx optimized
 
 The debug mode will show tracking results, more details refer to tools/test.py
 
-CPU onxx
+Setup of onnx
 
 First, you need to install onxx and onxxruningtime:
 
@@ -59,9 +59,17 @@ pip install onnxruntime_openvino-1.9.0-cp37-cp37m-linux_x86_64.whl
 python tools/onnx_search.py
 python tools/onnx_template.py
 
-python tools/test.py siamtpn_onnx shufflenet_l345_192 --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
+python tools/test.py siamtpn_onnx SiamTPN --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
 ```
+CPU onxx
+```
+python tools/test.py siamtpn_onnx SiamTPN --dataset_name got10k_val --debug 1 --cpu 1 --epoch 100 --sequence GOT-10k_Val_000001
+```
+
 GPU onxx
+```
+python tools/test.py siamtpn SiamTPN --dataset_name got10k_val --debug 1 --cpu 0 --epoch 100 --sequence GOT-10k_Val_000001
+```
 
 ## Citation
 If you find this repo useful, please cite with
